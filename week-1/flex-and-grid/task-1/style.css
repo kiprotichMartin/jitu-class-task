@@ -24,7 +24,6 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--main-bg);
   height: 100vh;
-  line-height: 1.5;
 
   display: flex;
   flex-direction: column;
@@ -33,12 +32,142 @@ body {
 }
 
 #grid-container {
-  width: 1100px;
+  width: 80%;
+  padding: 20px;
+  border: 5px solid aqua;
 
   display: grid;
   grid-template-columns: 1.5fr 1.2fr 1.2fr 1.2fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 20px;
+}
+
+#work,
+#play,
+#study,
+#exercise,
+#social,
+#self-care {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#calendar {
+  background-color: var(--secondary-bg);
+}
+
+#work {
+  background-color: var(--work-bg);
+}
+
+#play {
+  background-color: var(--play-bg);
+}
+
+#study {
+  background-color: var(--study);
+}
+
+#exercise {
+  background-color: var(--exercise);
+}
+
+#social {
+  background-color: var(--social);
+}
+
+#self-care {
+  background-color: var(--self-care-bg);
+}
+
+#profile,
+#calendar,
+#work,
+#play,
+#study,
+#exercise,
+#social,
+#self-care {
+  border-radius: 15px;
+  z-index: 0;
+}
+
+#work::before,
+#play::before,
+#study::before,
+#exercise::before,
+#social::before,
+#self-care::before {
+  content: " ";
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  top: -3%;
+  right: -15%;
+  transform: rotate(30deg);
+  z-index: 1;
+}
+
+#work::before {
+  background: url(./images/email.svg) no-repeat;
+}
+#play::before {
+  background: url(./images/game-controller.svg) no-repeat;
+}
+#study::before {
+  background: url(./images/open-book-3.svg) no-repeat;
+}
+#exercise::before {
+  background: url(./images/running.svg) no-repeat;
+}
+#social::before {
+  background: url(./images/chat.svg) no-repeat;
+}
+#self-care::before {
+  background: url(./images/first-aid-kit-2.svg) no-repeat;
+}
+
+#work-fg,
+#play-fg,
+#study-fg,
+#exercise-fg,
+#social-fg,
+#self-care-fg {
+  background-color: var(--secondary-bg);
+  height: 80%;
+  border-radius: 15px 15px 0 0;
+  padding: 10px;
+  z-index: 2;
+  
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#profile,
+#calendar {
+  padding: 20px;
+}
+
+#work,
+#play,
+#study,
+#exercise,
+#social,
+#self-care {
+  position: relative;
+  overflow: hidden;
+}
+
+/* #calendar */
+#grid-one {
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
+}
+
+#exercise {
+  grid-column-start: 2;
 }
 
 #report {
@@ -59,61 +188,54 @@ body {
 }
 
 .task {
-  font-size: 1.1rem;
+  font-size: .9rem;
 }
 
 .hours {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .menu,
 .description {
   color: var(--secondary-text);
+  /* line-height: 2; */
 }
 
 #profile {
   background-color: var(--profile-bg);
 }
 
-#profile-img {
+#profile-img-div {
   height: 70px;
   width: 70px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
 }
 
-img {
+#profile-img {
   height: auto;
   width: 100%;
   border-radius: 50%;
-  border: 5px solid hsl(0, 0%, 100%);
 }
 
-#calendar {
-  grid-row: 2 / 3;
-  grid-column: 1 / 2;
+.dots {
+  width: 25px;
+  height: 25px;
 }
 
-#exercise {
-  grid-column-start: 2;
+.top {
+  display: flex;
+  justify-content: space-between;
 }
 
-#profile,
-#calendar,
-#work,
-#play,
-#study,
-#exercise,
-#social,
-#self-care {
-  border-radius: 7px;
-  padding: 20px;
+.bottom {
+  display: flex;
+  flex-direction: column;
 }
 
-#calendar,
-#work,
-#play,
-#study,
-#exercise,
-#social,
-#self-care {
-  background-color: var(--secondary-bg);
+@media screen and (max-width:640px) {
+  #grid-container {
+    display: flex;
+    flex-direction: column;
+  }
 }
