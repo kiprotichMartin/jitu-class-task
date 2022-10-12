@@ -3,3 +3,134 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --body-bg: hsl(0, 9%, 96%);
+  --div-bg: hsl(0, 0%, 100%);
+  --primary-txt: hsl(0, 0%, 0%);
+  --ad-btn-bg: hsl(0, 0%, 50%);
+  --member-btn-bg: hsl(0, 1%, 30%);
+  --btn-txt: hsl(43, 75%, 94%);
+}
+
+
+body {
+  background-color: var(--body-bg);
+  height: 100vh;
+}
+
+#advert {
+  background-image: url("./images/macbook.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+  padding: 30px;
+  margin: 20px;
+}
+
+#advert > button {
+  background-color: var(--ad-btn-bg);
+  color: white;
+}
+
+#advert > *,
+.membership > *,
+.services > * {
+  margin: 20px 0px;
+}
+
+.price-text {
+  font-weight: bold;
+}
+
+span {
+  font-size: .85rem;
+}
+
+button {
+  padding: 10px 20px;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+}
+
+.nav > p {
+  font-size: 1rem;
+}
+
+.nav,
+.membership,
+.services {
+  background-color: var(--div-bg);
+  margin: 20px;
+  padding: 8px;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+#contact {
+  background-color: var(--ad-btn-bg);
+  color: white;
+}
+
+.membership > button {
+  background-color: var(--member-btn-bg);
+  color: var(--btn-txt);
+}
+
+
+/*========== PHONES ==========*/
+@media only screen and (max-width: 640px) {
+  .nav,
+  .membership,
+  .services {display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/*========== TABLETS ==========*/
+@media only screen and (min-width: 641px;) {
+
+}
+
+/*========== DESKTOP ==========*/
+@media only screen and (min-width: 1008px) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  #advert,
+  .nav,
+  .membership,
+  .services {
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav,
+  .membership,
+  .services {
+    align-items: center;
+  }
+
+  #advert {
+    align-items: flex-start;
+    justify-content: center;
+
+    grid-column: 1 / span 3;
+    grid-row: 2 / span 2;
+  }
+}

@@ -1,5 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --main-bg: hsl(245, 30%, 16%);
+  --secondary-bg: hsl(236, 45%, 20%);
+  --profile-bg: hsl(246, 80%, 60%);
+  --primary-text: hsl(190, 58%, 92%);
+  --secondary-text: hsl(236, 11%, 52%);
+  --work-bg: hsl(15, 100%, 70%);
+  --play-bg: hsl(195, 74%, 62%);
+  --study: hsl(348, 100%, 68%);
+  --exercise: hsl(145, 58%, 55%);
+  --social: hsl(264, 64%, 52%);
+  --self-care-bg: hsl(43, 84%, 65%);
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--main-bg);
+  height: 100vh;
+  line-height: 1.5;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#grid-container {
+  width: 1100px;
+
+  display: grid;
+  grid-template-columns: 1.5fr 1.2fr 1.2fr 1.2fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+#report {
+  color: var(--primary-text);
+  padding-top: 5px;
+}
+
+#name {
+  color: var(--primary-text);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.task,
+.hours {
+  color: var(--primary-text);
+  font-weight: bold;
+}
+
+.task {
+  font-size: 1.1rem;
+}
+
+.hours {
+  font-size: 1.5rem;
+}
+
+.menu,
+.description {
+  color: var(--secondary-text);
+}
+
+#profile {
+  background-color: var(--profile-bg);
+}
+
+#profile-img {
+  height: 70px;
+  width: 70px;
+}
+
+img {
+  height: auto;
+  width: 100%;
+  border-radius: 50%;
+  border: 5px solid hsl(0, 0%, 100%);
+}
+
+#calendar {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+}
+
+#exercise {
+  grid-column-start: 2;
+}
+
+#profile,
+#calendar,
+#work,
+#play,
+#study,
+#exercise,
+#social,
+#self-care {
+  border-radius: 7px;
+  padding: 20px;
+}
+
+#calendar,
+#work,
+#play,
+#study,
+#exercise,
+#social,
+#self-care {
+  background-color: var(--secondary-bg);
 }
