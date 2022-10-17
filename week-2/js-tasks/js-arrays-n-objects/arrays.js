@@ -240,16 +240,12 @@ const users = [
 
 // 2. Log the name of person who works at ‘Robel-Corkery”
 // const newUser = users.filter(getUser);
-// const newCompany = newUser.map(getCompany);
+// const newCompany = newUser.map(getUser);
 
 // function getUser(user) {
 //   if (user['company']['name'] == 'Robel-Corkery') {
 //     return user['name'];
 //   }
-// }
-
-// function getCompany(user) {
-//   return user['name'];
 // }
 
 // console.log(newCompany);
